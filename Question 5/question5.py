@@ -4,7 +4,7 @@ def task1():
     for i in range(5):
         lis = []
         for j in range(5):
-            lis.append(color[1&(i^j)])
+            lis.append(color[(i+j)%2])
         ans += " ".join(lis) + "\n"
     with open("output_question_5_1", "w") as f:
         f.write(ans)
@@ -18,7 +18,7 @@ def task2():
     for i in range(64):
         lis = []
         for j in range(64):
-            if 1&(i^j):
+            if (i+j)%2==0:
                 lis.append(a[pa])
                 pa += 1
             else:
